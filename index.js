@@ -9,12 +9,19 @@ async function fetchAstronauts(requestURL) {
 }
 
 // CALL your function here
-
+fetchAstronauts();
 // TASK 1: Fetch Data from the "People in Space" API
 
 // 1. Find the "People in Space" API: http://open-notify.org/
 // 2. Identify whether you need to be authenticated with an API Key, if so create an account and save your key. 
 // 3. Navigate the documenation and create a request URL to fetch a list of all the people in outer space.
+let requestURL= "http://api.open-notify.org/astros.json"
+async function fetchData() {
+    const response = await fetch(requestURL);
+    const data = await response.json();
+    console.log(data.people[7].name)
+}
+fetchData()
 // 4. Make a fetch request and format your resulting JSON. 
 // 5. Log the data to the console to inspect its structure.
 // 6. Modify the console log to only show the name of the 8th listed person in outerspace. 
